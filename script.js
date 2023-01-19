@@ -10,7 +10,11 @@ var pool = ['1','2','3','4','5','6','7','8','9','0','q','w','e','r','t','y','u',
 
 function generatePassword() {
   
-  let userPasswordLength = prompt('How many digits do you want your password to be?');
+  let userPasswordLength = prompt('How many digits do you want your password to be? Please choose 8-128.');
+  if (userPasswordLength < 8 || userPasswordLength > 128) {
+    alert("Please choose 8-128!")
+    return;
+  }
   console.log('userPassword', userPasswordLength)
   if(userPasswordLength){
     password = [];
